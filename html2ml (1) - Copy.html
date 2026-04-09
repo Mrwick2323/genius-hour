@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>hi</title>
+</head>
+<body>
+<h1>
+Syntax
+</h1>
+<h3><br>Objects and attributes</h3>
+<p>An object in html typically follows the scheme of &lt;, followed by a piece of text which defines the type of object, then &gt;. Most objects have to be closed after editing the body of the object, which is done by having the same object, but with / infront of the piece of text.</p>
+<p>An attribute is what goes inside an object, it defines different attributes of the object, such as source, tooltip, color, size, etc. it usually goes after name of the object.<p>
+<h3>Example:<h3>
+<iframe 
+src="data:text/html,
+<html>
+<body style='background:white;'>
+<p>&ltobject stringattr={a string of text} numattr={a number}>body of the object, if its one that has a body &lt; /object></p>
+</body>
+</html>" 
+style="width:1000px; height:33px; border:1px solid black;">
+</iframe>
+<h1>Text</h1>
+<h2><br>Objects</h2>
+<h3>Paragraph</h3>
+<p>A paragraph is defined using the &ltp> object, it doesnt have any special attributes, and it used to defined a paragraph of text.</p>
+<h3>Headings</h3>
+<p>Headings can be defined using 6 different objects, &lth1> through &lth6>. Each heading has a different size, with &lth1> being the largest.</p>
+<h2>Examples:</h2>
+<iframe 
+src="data:text/html,
+<html>
+<body style='background:white;'>
+<pre>Input:
+&ltp>This is a paragraph!&lt;/p>
+
+Output:
+This is a paragraph!
+
+<h1>&lth1></h1>
+<h2>&lth2></h2>
+<h3>&lth3></h3>
+<h4>&lth4></h4>
+<h5>&lth5></h5>
+<h6>&lth6></h6>
+</pre>
+</body>
+</html>" 
+style="width:1000px; height:200px; border:1px solid black;">
+</iframe>
+
+<h1>Links</h1>
+<h2><br>Objects</h2>
+<h3>Anchor</h3>
+<p>A link is defined using the &lta> object. The destination of the link is set using the href attribute, which takes a URL as a string. The body of the object is what the user sees and clicks on, which can be plain text or another object like an image.</p>
+<p>By default, links open in the same tab. To open in a new tab, you can use the target attribute set to _blank.</p>
+<h2>Examples:</h2>
+<iframe
+src="data:text/html,
+<html>
+<body style='background:white;'>
+<pre>Input:
+&lta href={https://example.com}>Click here&lt;/a>
+
+Output:
+<a href='https://example.com'>Click here</a>
+
+Input:
+&lta href={https://example.com} target={_blank}>Opens in new tab&lt;/a>
+
+Output:
+<a href='https://example.com' target='_blank'>Opens in new tab</a>
+</pre>
+</body>
+</html>"
+style="width:1000px; height:160px; border:1px solid black;">
+</iframe>
+
+<h1>Images</h1>
+<h2><br>Objects</h2>
+<h3>Image</h3>
+<p>An image is defined using the &ltimg> object. Unlike most objects, it does not have a closing tag. The source of the image is set using the src attribute, which takes a URL or a file path as a string. The alt attribute provides a text description of the image, which is shown if the image fails to load and is used by screen readers.</p>
+<p>The width and height attributes can be used to set the size of the image in pixels. If only one is set, the other will scale proportionally.</p>
+<h2>Examples:</h2>
+<iframe
+src="data:text/html,
+<html>
+<body style='background:white;'>
+<pre>Input:
+&ltimg src={https://c8.alamy.com/comp/E6JNH1/tulips-single-beautiful-flower-isolated-on-a-white-background-E6JNH1.jpg} alt={a flower} width={200}>
+
+Output:
+<img src='https://c8.alamy.com/comp/E6JNH1/tulips-single-beautiful-flower-isolated-on-a-white-background-E6JNH1.jpg' alt='a flower' width='200'>
+</pre>
+</body>
+</html>"
+style="width:1000px; height:280px; border:1px solid black;">
+</iframe>
+<p>Images can also be made into links by wrapping the &ltimg> object inside an &lta> object.</p>
+<iframe
+src="data:text/html,
+<html>
+<body style='background:white;'>
+<pre>Input:
+&lta href={https://example.com}>&ltimg src={https://c8.alamy.com/comp/E6JNH1/tulips-single-beautiful-flower-isolated-on-a-white-background-E6JNH1.jpg} alt={a flower} width={100}>&lt;/a>
+
+Output:
+<a href='https://example.com'><img src='https://c8.alamy.com/comp/E6JNH1/tulips-single-beautiful-flower-isolated-on-a-white-background-E6JNH1.jpg' alt='a flower' width='100'></a>
+</pre>
+</body>
+</html>"
+style="width:1000px; height:180px; border:1px solid black;">
+</iframe>
+
+<h1>Video</h1>
+<h2><br>Objects</h2>
+<h3>Video</h3>
+<p>A video is embedded using the &ltvideo> object. The src attribute sets the source file. The controls attribute, which takes no value, adds play, pause, and volume controls to the player. The width and height attributes set the size of the player in pixels.</p>
+<p>Other useful attributes include autoplay, which starts the video automatically, loop, which replays the video when it ends, and muted, which starts the video without sound. Note that most browsers will not allow autoplay unless muted is also set.</p>
+<p>Inside the &ltvideo> object you can place a &ltsource> object, which also takes a src attribute and a type attribute describing the file format. This lets you provide multiple formats so the browser can pick one it supports. Any text placed after the &ltsource> objects is shown only if the browser does not support the &ltvideo> object at all.</p>
+<h2>Examples:</h2>
+<iframe
+src="data:text/html,
+<html>
+<body style='background:white;'>
+<pre>Input:
+&ltvideo src={https://github.com/Mrwick2323/genius-hour/raw/refs/heads/main/Video_20260303_071207_383%20(1).mov} width={320} controls>&lt;/video>
+
+Output:
+<video src='https://github.com/Mrwick2323/genius-hour/raw/refs/heads/main/Video_20260303_071207_383%20(1).mov' width='320' controls></video>
+
+Input (with multiple sources and fallback text):
+&ltvideo width={320} controls>
+  &ltsource src={video.mp4} type={video/mp4}>
+  &ltsource src={video.webm} type={video/webm}>
+  Your browser does not support video.
+&lt;/video>
+</pre>
+</body>
+</html>"
+style="width:1000px; height:320px; border:1px solid black;">
+</iframe>
+
+<h1>Sound</h1>
+<h2><br>Objects</h2>
+<h3>Audio</h3>
+<p>Audio is embedded using the &ltaudio> object. It works similarly to &ltvideo>. The src attribute sets the source file, and the controls attribute adds a simple playback bar. The autoplay, loop, and muted attributes behave the same way as they do on &ltvideo>.</p>
+<p>Just like with video, you can place &ltsource> objects inside &ltaudio> to provide multiple file formats as fallbacks, and any text after the &ltsource> objects is shown only if the browser does not support the &ltaudio> object.</p>
+<h2>Examples:</h2>
+<iframe
+src="data:text/html,
+<html>
+<body style='background:white;'>
+<pre>Input:
+&ltaudio src={https://github.com/Mrwick2323/genius-hour/raw/refs/heads/main/horse%20(1).mp3} controls>&lt;/audio>
+
+Output:
+<audio src='https://github.com/Mrwick2323/genius-hour/raw/refs/heads/main/horse%20(1).mp3' controls></audio>
+
+Input (with multiple sources and fallback text):
+&ltaudio controls>
+  &ltsource src={sound.mp3} type={audio/mpeg}>
+  &ltsource src={sound.ogg} type={audio/ogg}>
+  Your browser does not support audio.
+&lt;/audio>
+</pre>
+</body>
+</html>"
+style="width:1000px; height:200px; border:1px solid black;">
+</iframe>
+
+</body>
+</html>
